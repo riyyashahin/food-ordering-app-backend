@@ -32,10 +32,6 @@ app.use(cors());
 app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "health OK!" });
 });
-app.use((req, res, next) => {
-  console.log('Authorization header:', req.headers.authorization);
-  next();
-});
 app.use("/api/my/user", myUserRoutes);
 app.use("/api/my/restaurant", myRestaurantRoute);
 
